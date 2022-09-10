@@ -1,0 +1,54 @@
+version: '3.7'
+
+services:
+  dev:
+    build:
+      context: app
+      target: dev
+      args:
+        PROJECT_PATH: ${PROJECT_PATH}
+    env_file:
+      - ./app/env/${ENVIRONMENT}.env
+    environment:
+      - "PROJECT_FOLDER_PATH=${PROJECT_FOLDER_PATH}"
+      - "DLL_NAME=${DLL_NAME}"
+      - "SPECS_PROJECT_PATH=${SPECS_PROJECT_PATH}"
+      - "SPECS_PROJECT_NAME=${SPECS_PROJECT_NAME}"
+      - "SPECS_DLL_NAME=${SPECS_DLL_NAME}"
+      - "NET_VERSION=${NET_VERSION}" 
+    image: "${DEV_IMAGE_NAME}:${VERSION}"
+    volumes:
+      - ./app/TuiMusement.CitiesWeather.sln:/app/TuiMusement.CitiesWeather.sln
+      - ./app/Makefile:/app/Makefile
+      - ./app/scripts:/app/scripts
+      - ./app/settings:/app/settings
+      - ./app/src:/app/src
+      - ./app/test:/app/test
+      - ./app/test-report:/app/test-report
+      - ./app/behavioral-test-results:/app/behavioral-test-results
+    depends_on:
+      - wiremock        
+  
+  #the following service has been added only to facilitate the build and tag of the production container through docker-compose
+  prod:
+    build:
+      context: app
+      target: prod
+      args:
+        PROJECT_PATH: ${PROJECT_PATH}
+        DLL_NAME: ${DLL_NAME}
+    image: "${PROD_IMAGE_NAME}:${VERSION}"
+    command: "echo 'shutting down'"
+  
+  wiremock:
+    domainname: app
+    container_name: wiremock
+    build:
+      context: wiremock
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/files:/home/wiremock/__files
+  

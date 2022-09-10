@@ -1,0 +1,32 @@
+﻿{
+  id: 56,
+  uuid: Guid_1,
+  top: true,
+  name: London,
+  code: london,
+  content: London, one of Europe’s cultural capitals, is the largest and most popular city for travelers in Europe. Home to famous monuments and landscapes, there are experiences for all kinds of people, from art-lovers to people passionate about literature or history, sport fans, people who love the performing arts and so much more. From history, science and art museums, to amusement parks, zoos and other attractions there is always something to do. The city where Shakespeare changed the history of theatre and performing arts, where Dickens wrote about the young Oliver Twist, where visitors can admire the Royal Palaces of the British monarchy and where there is always a park nearby to enjoy a peaceful stroll, London is worth your time. It is a leading global city in all fields and is well known for monuments like the Big Ben, Westminster Abbey, Buckingham Palace, the Tower of London, Tower Bridge, London Bridge, the London-Eye and much more.,
+  content_html: ,
+  meta_description: Find out what’s happening in London and book your tickets for the best museums, attractions and tours in advance. Skip the line, make your trip more enjoyable. Museums, tours, attractions at your fingertips.,
+  meta_title: ,
+  headline: ,
+  more: ,
+  more_html: ,
+  weight: 4,
+  latitude: 51.52,
+  longitude: -0.11,
+  country: {
+    id: 183,
+    name: United Kingdom,
+    iso_code: GB,
+    country_prefix: ,
+    currency_code: 
+  },
+  cover_image_url: https://images-sandbox.musement.com/cover/0002/49/big-ben-westminster-bridge-on-river-thames-in-london-jpg_header-148518.jpeg,
+  url: https://.sbox.musement.com/us/london/,
+  activities_count: 224,
+  time_zone: Europe/London,
+  list_count: 1,
+  venue_count: 34,
+  slug: ,
+  show_in_popular: true
+}

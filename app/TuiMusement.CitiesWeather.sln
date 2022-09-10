@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{09775295-5A43-44CA-B3A8-205CC068263D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CE12BC78-DCA9-4B21-B979-D2AD4196F535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{5CC13013-CABD-45B0-A76B-F21942DB78F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration", "integration", "{95F780A0-31AC-4C24-8167-67D830587701}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functional", "functional", "{49C2E68C-CAC2-4731-8626-3F48CFAFAB31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Specs", "test\functional\TuiMusement.CitiesWeather.Specs\TuiMusement.CitiesWeather.Specs.csproj", "{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.CitiesServiceClient", "src\TuiMusement.CitiesWeather.CitiesServiceClient\TuiMusement.CitiesWeather.CitiesServiceClient.csproj", "{D6715F97-55BD-401B-8609-26994772E7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.WeatherServiceClient", "src\TuiMusement.CitiesWeather.WeatherServiceClient\TuiMusement.CitiesWeather.WeatherServiceClient.csproj", "{0C498B36-D415-41DD-9227-5D2A29D3D21D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Domain", "src\TuiMusement.CitiesWeather.Domain\TuiMusement.CitiesWeather.Domain.csproj", "{D826A640-512B-425F-9BAC-2D2F5A811273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Application", "src\TuiMusement.CitiesWeather.Application\TuiMusement.CitiesWeather.Application.csproj", "{000EC642-D7A3-424B-8360-0795F523970C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Infrastructure", "src\TuiMusement.CitiesWeather.Infrastructure\TuiMusement.CitiesWeather.Infrastructure.csproj", "{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Cli", "src\TuiMusement.CitiesWeather.Cli\TuiMusement.CitiesWeather.Cli.csproj", "{85A45BC9-B2EB-4254-ADB4-AC55F3345D92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Application.UnitTests", "test\unit\TuiMusement.CitiesWeather.Application.UnitTests\TuiMusement.CitiesWeather.Application.UnitTests.csproj", "{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.CitiesServiceClient.UnitTests", "test\unit\TuiMusement.CitiesWeather.CitiesServiceClient.UnitTests\TuiMusement.CitiesWeather.CitiesServiceClient.UnitTests.csproj", "{73DB509F-A9A0-4CEF-9814-92FD2889C49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.WeatherServiceClient.UnitTests", "test\unit\TuiMusement.CitiesWeather.WeatherServiceClient.UnitTests\TuiMusement.CitiesWeather.WeatherServiceClient.UnitTests.csproj", "{1D340E52-A58B-4DFE-9A9B-24740A68D1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Infrastructure.UnitTests", "test\unit\TuiMusement.CitiesWeather.Infrastructure.UnitTests\TuiMusement.CitiesWeather.Infrastructure.UnitTests.csproj", "{811E851B-EF6C-46C9-AB7B-AE2BBED85435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuiMusement.CitiesWeather.Cli.UnitTests", "test\unit\TuiMusement.CitiesWeather.Cli.UnitTests\TuiMusement.CitiesWeather.Cli.UnitTests.csproj", "{90F87039-7E4E-4181-BC80-4C17FF14433B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CC13013-CABD-45B0-A76B-F21942DB78F0} = {CE12BC78-DCA9-4B21-B979-D2AD4196F535}
+		{95F780A0-31AC-4C24-8167-67D830587701} = {CE12BC78-DCA9-4B21-B979-D2AD4196F535}
+		{49C2E68C-CAC2-4731-8626-3F48CFAFAB31} = {CE12BC78-DCA9-4B21-B979-D2AD4196F535}
+		{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79} = {49C2E68C-CAC2-4731-8626-3F48CFAFAB31}
+		{D6715F97-55BD-401B-8609-26994772E7A9} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{0C498B36-D415-41DD-9227-5D2A29D3D21D} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{D826A640-512B-425F-9BAC-2D2F5A811273} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{000EC642-D7A3-424B-8360-0795F523970C} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{85A45BC9-B2EB-4254-ADB4-AC55F3345D92} = {09775295-5A43-44CA-B3A8-205CC068263D}
+		{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3} = {5CC13013-CABD-45B0-A76B-F21942DB78F0}
+		{73DB509F-A9A0-4CEF-9814-92FD2889C49F} = {5CC13013-CABD-45B0-A76B-F21942DB78F0}
+		{1D340E52-A58B-4DFE-9A9B-24740A68D1B9} = {5CC13013-CABD-45B0-A76B-F21942DB78F0}
+		{811E851B-EF6C-46C9-AB7B-AE2BBED85435} = {5CC13013-CABD-45B0-A76B-F21942DB78F0}
+		{90F87039-7E4E-4181-BC80-4C17FF14433B} = {5CC13013-CABD-45B0-A76B-F21942DB78F0}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BF29F5-5AAD-452A-B69B-BACEDE0A8E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6715F97-55BD-401B-8609-26994772E7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6715F97-55BD-401B-8609-26994772E7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6715F97-55BD-401B-8609-26994772E7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6715F97-55BD-401B-8609-26994772E7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C498B36-D415-41DD-9227-5D2A29D3D21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C498B36-D415-41DD-9227-5D2A29D3D21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C498B36-D415-41DD-9227-5D2A29D3D21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C498B36-D415-41DD-9227-5D2A29D3D21D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D826A640-512B-425F-9BAC-2D2F5A811273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D826A640-512B-425F-9BAC-2D2F5A811273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D826A640-512B-425F-9BAC-2D2F5A811273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D826A640-512B-425F-9BAC-2D2F5A811273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000EC642-D7A3-424B-8360-0795F523970C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000EC642-D7A3-424B-8360-0795F523970C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000EC642-D7A3-424B-8360-0795F523970C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000EC642-D7A3-424B-8360-0795F523970C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98665E16-CE89-4C26-8DC1-7E15C1CE2ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85A45BC9-B2EB-4254-ADB4-AC55F3345D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A45BC9-B2EB-4254-ADB4-AC55F3345D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A45BC9-B2EB-4254-ADB4-AC55F3345D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A45BC9-B2EB-4254-ADB4-AC55F3345D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E82F73-4EE4-4168-AC6A-9E2DEB45E4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73DB509F-A9A0-4CEF-9814-92FD2889C49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DB509F-A9A0-4CEF-9814-92FD2889C49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DB509F-A9A0-4CEF-9814-92FD2889C49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73DB509F-A9A0-4CEF-9814-92FD2889C49F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D340E52-A58B-4DFE-9A9B-24740A68D1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D340E52-A58B-4DFE-9A9B-24740A68D1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D340E52-A58B-4DFE-9A9B-24740A68D1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D340E52-A58B-4DFE-9A9B-24740A68D1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811E851B-EF6C-46C9-AB7B-AE2BBED85435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811E851B-EF6C-46C9-AB7B-AE2BBED85435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811E851B-EF6C-46C9-AB7B-AE2BBED85435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811E851B-EF6C-46C9-AB7B-AE2BBED85435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F87039-7E4E-4181-BC80-4C17FF14433B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F87039-7E4E-4181-BC80-4C17FF14433B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F87039-7E4E-4181-BC80-4C17FF14433B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F87039-7E4E-4181-BC80-4C17FF14433B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

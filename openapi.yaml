@@ -1,0 +1,191 @@
+openapi: 3.0.0
+info:
+    title: Musement API
+    description: Musement API
+    termsOfService: https://www.musement.com/
+    contact:
+        email: support@musement.com
+    license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+    version: 3.5.0
+servers:
+    - url: https://sandbox.musement.com/api/v3
+      description: Sandbox server
+    - url: https://api.musement.com/api/v3
+      description: Production server
+paths:
+
+    /cities/{cityId}/weather:
+        post:
+            tags:
+                - Weather
+            summary: Create city's weather forecast for a given date.
+            operationId: CreateCityWeatherForecast
+            parameters:
+                - $ref: '#/components/parameters/X-Musement-Version'
+                - $ref: '#/components/parameters/Accept-Language'
+                - $ref: '#/components/parameters/cityId'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/CityWeatherForecast'
+
+            responses:
+                '201':
+                    description: Returned when successful
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CityWeatherForecastResponse'
+                '404':
+                    description: Returned when the city is not found
+                '409':
+                    description: Returned when a weather forecast already exists for the given city for the given date
+                '503':
+                    description: Returned when the service is unavailable
+    /cities/{cityId}/weather/{date}:
+        get:
+            tags:
+                - Weather
+            summary: Return city's weather forecast for a given date.
+            operationId: GetCityWeatherForecast
+            parameters:
+                - $ref: '#/components/parameters/X-Musement-Version'
+                - $ref: '#/components/parameters/Accept-Language'
+                - $ref: '#/components/parameters/cityId'
+                - $ref: '#/components/parameters/date'
+            responses:
+                '200':
+                    description: Returned when successful
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CityWeatherForecastResponse'
+                '404':
+                    description: Returned when the city is not found or if no weather forecast is found for that city for that date
+                '503':
+                    description: Returned when the service is unavailable
+        patch:
+            tags:
+                - Weather
+            summary: Update city's weather forecast for a given date.
+            operationId: UpdateCityWeatherForecast
+            parameters:
+                - $ref: '#/components/parameters/X-Musement-Version'
+                - $ref: '#/components/parameters/Accept-Language'
+                - $ref: '#/components/parameters/cityId'
+                - $ref: '#/components/parameters/date'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/CityWeatherForecastUpdateRequest'
+
+            responses:
+                '204':
+                    description: Returned when successful
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CityWeatherForecastResponse'
+                '404':
+                    description: Returned when the city is not found or if no weather forecast is found for that city for that date
+                '503':
+                    description: Returned when the service is unavailable
+        delete:
+            tags:
+                - Weather
+            summary: Deletes city's weather forecast for a given date.
+            operationId: DeleteCityWeatherForecast
+            parameters:
+                - $ref: '#/components/parameters/X-Musement-Version'
+                - $ref: '#/components/parameters/Accept-Language'
+                - $ref: '#/components/parameters/cityId'
+                - $ref: '#/components/parameters/date'
+
+            responses:
+                '204':
+                    description: Returned when successful
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CityWeatherForecastResponse'
+                '404':
+                    description: Returned when the city is not found or if no weather forecast is found for that city for that date
+                '503':
+                    description: Returned when the service is unavailable
+
+components:
+    schemas:
+
+        CityWeatherForecastUpdateRequest:
+            type: object
+            properties:
+                conditionText:
+                    type: string
+                    description: the condition text of the weather forecast
+                    example: Partly cloudy
+                conditionIcon:
+                    type: string
+                    description: the url of the icon related to the weather condition
+                    example: //cdn.weatherapi.com/weather/64x64/day/116.png
+                conditionCode:
+                    type: integer
+                    description: the code related to the weather condition
+                    example: 1003
+
+        CityWeatherForecast:
+            allOf:
+                - $ref: '#/components/schemas/CityWeatherForecastUpdateRequest'
+                - type: object
+                  required:
+                      - date
+                  properties:
+                      date:
+                          type: string
+                          format: date
+                          description: the date of the weather forecast, format is (YYYY-MM-DD)
+                          example: 2020-01-01
+        CityWeatherForecastResponse:
+            allOf:
+                - $ref: '#/components/schemas/CityWeatherForecast'
+                - type: object
+                  properties:
+                      cityId:
+                          type: integer
+                          description: the identifier of the city for which the weather forecast has been requested
+                          example: 420
+    parameters:
+        Accept-Language:
+            name: Accept-Language
+            in: header
+            required: false
+            schema:
+                type: string
+                default: en-US
+        X-Musement-Version:
+            name: X-Musement-Version
+            in: header
+            required: false
+            schema:
+                type: string
+        date:
+            name: date
+            in: path
+            description: 'date | Use format: YYYY-MM-DD'
+            required: true
+            schema:
+                type: string
+                format: date
+        cityId:
+            name: cityId
+            in: path
+            description: City identifier
+            required: true
+            schema:
+                type: integer
+
+
+    

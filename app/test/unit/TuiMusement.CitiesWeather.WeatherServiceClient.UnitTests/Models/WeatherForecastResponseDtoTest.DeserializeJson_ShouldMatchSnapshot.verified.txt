@@ -1,0 +1,34 @@
+﻿{
+  location: {
+    name: London,
+    region: City of London, Greater London,
+    country: United Kingdom,
+    tz_id: Europe/London,
+    lat: 51.52,
+    lon: -0.11
+  },
+  forecast: {
+    forecastday: [
+      {
+        date: DateTime_1,
+        day: {
+          condition: {
+            text: Moderate rain,
+            icon: //cdn.weatherapi.com/weather/64x64/day/302.png,
+            code: 1189
+          }
+        }
+      },
+      {
+        date: DateTime_2,
+        day: {
+          condition: {
+            text: Patchy rain possible,
+            icon: //cdn.weatherapi.com/weather/64x64/day/176.png,
+            code: 1063
+          }
+        }
+      }
+    ]
+  }
+}

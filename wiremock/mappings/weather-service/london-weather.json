@@ -1,0 +1,25 @@
+{
+  "priority": 3,
+  "request": {
+    "method": "GET",
+    "urlPath": "/weather-service/forecast.json",
+    "queryParameters": {
+      "key": {
+        "equalTo": "no-key"
+      },
+      "q": {
+        "equalTo": "51.52,-0.11"
+      },
+      "days": {
+        "equalTo": "2"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "weather-service/london-weather.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
