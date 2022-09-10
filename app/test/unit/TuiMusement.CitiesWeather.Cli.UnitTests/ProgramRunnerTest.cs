@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection.PortableExecutable;
 using System.Threading.Tasks;
 using FluentAssertions;
 using MediatR;
@@ -11,7 +10,6 @@ using NUnit.Framework;
 using TuiMusement.CitiesWeather.Application.Requests;
 using TuiMusement.CitiesWeather.Domain.Entities;
 using TuiMusement.CitiesWeather.Domain.ValueObjects;
-using TuiMusement.CitiesWeather.WeatherServiceClient.Models;
 
 namespace TuiMusement.CitiesWeather.Cli.UnitTests
 {
@@ -35,8 +33,6 @@ namespace TuiMusement.CitiesWeather.Cli.UnitTests
         public async Task Run_ShouldPrintResults_IfMediatorReturnsASuccessfulResponse()
         {
             //arrange
-            const double cityLatitude = 1;
-            const double cityLongitude = -1;
             const int conditionCode = 3;
             const string conditionText1 = nameof(conditionText1);
             const string conditionText2 = nameof(conditionText2);

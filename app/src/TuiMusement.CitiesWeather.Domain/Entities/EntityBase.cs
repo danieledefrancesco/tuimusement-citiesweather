@@ -2,50 +2,48 @@ using System.Collections.Generic;
 
 namespace TuiMusement.CitiesWeather.Domain.Entities
 {
-    public abstract class EntityBase<TID>
+    public abstract class EntityBase<TId>
     {
-        protected EntityBase(TID id)
+        protected EntityBase(TId id)
         {
             Id = id;
         }
 
-        public TID Id { get; }
+        public TId Id { get; }
 
-        private sealed class IdEqualityComparer : IEqualityComparer<EntityBase<TID>>
+        private sealed class IdEqualityComparer : IEqualityComparer<EntityBase<TId>>
         {
-            public bool Equals(EntityBase<TID> x, EntityBase<TID> y)
+            public bool Equals(EntityBase<TId>? x, EntityBase<TId>? y)
             {
                 if (ReferenceEquals(x, y)) return true;
                 if (ReferenceEquals(x, null)) return false;
                 if (ReferenceEquals(y, null)) return false;
-                if (x.GetType() != y.GetType()) return false;
-                return EqualityComparer<TID>.Default.Equals(x.Id, y.Id);
+                return x.GetType() == y.GetType() && EqualityComparer<TId>.Default.Equals(x.Id, y.Id);
             }
 
-            public int GetHashCode(EntityBase<TID> obj)
+            public int GetHashCode(EntityBase<TId> obj)
             {
-                return EqualityComparer<TID>.Default.GetHashCode(obj.Id);
+                return EqualityComparer<TId>.Default.GetHashCode(obj.Id!);
             }
         }
 
-        public static IEqualityComparer<EntityBase<TID>> IdComparer { get; } = new IdEqualityComparer();
+        public static IEqualityComparer<EntityBase<TId>> IdComparer { get; } = new IdEqualityComparer();
 
-        protected bool Equals(EntityBase<TID> other)
+        private bool Equals(EntityBase<TId> other)
         {
-            return EqualityComparer<TID>.Default.Equals(Id, other.Id);
+            return EqualityComparer<TId>.Default.Equals(Id, other.Id);
         }
 
         public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != this.GetType()) return false;
-            return Equals((EntityBase<TID>)obj);
+            return obj.GetType() == this.GetType() && Equals((EntityBase<TId>)obj);
         }
 
         public override int GetHashCode()
         {
-            return EqualityComparer<TID>.Default.GetHashCode(Id);
+            return EqualityComparer<TId>.Default.GetHashCode(Id!);
         }
     }
 }

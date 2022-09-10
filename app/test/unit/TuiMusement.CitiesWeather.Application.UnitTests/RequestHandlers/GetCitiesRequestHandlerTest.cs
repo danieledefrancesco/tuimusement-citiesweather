@@ -24,7 +24,7 @@ namespace TuiMusement.CitiesWeather.Application.UnitTests.RequestHandlers
         private ICitiesServiceClient? _citiesServiceClient;
         private GetCitiesRequestHandler? _getCitiesRequestHandler;
         private IMapper? _mapper;
-        private IMediator _mediator;
+        private IMediator? _mediator;
 
         [SetUp]
         public void SetUp()
@@ -59,7 +59,7 @@ namespace TuiMusement.CitiesWeather.Application.UnitTests.RequestHandlers
             };
             var getWeatherForecastsResponse =
                 Response<IEnumerable<WeatherForecast>>.NewSuccessfulResponse(weatherForecasts);
-            _mediator.Send(Arg.Any<GetWeatherForecastsRequest>()).Returns(getWeatherForecastsResponse);
+            _mediator!.Send(Arg.Any<GetWeatherForecastsRequest>()).Returns(getWeatherForecastsResponse);
 
             //act
             var actualResult = await _getCitiesRequestHandler!.Handle(new GetCitiesRequest(), CancellationToken.None);
@@ -107,7 +107,7 @@ namespace TuiMusement.CitiesWeather.Application.UnitTests.RequestHandlers
             _mapper!.Map<City>(cityDto).Returns(city);
             var getWeatherForecastsResponse =
                 Response<IEnumerable<WeatherForecast>>.NewFailedResponse(expectedException);
-            _mediator.Send(Arg.Any<GetWeatherForecastsRequest>()).Returns(getWeatherForecastsResponse);
+            _mediator!.Send(Arg.Any<GetWeatherForecastsRequest>()).Returns(getWeatherForecastsResponse);
             //act
             var actualResult = await _getCitiesRequestHandler!.Handle(new GetCitiesRequest(), CancellationToken.None);
             
